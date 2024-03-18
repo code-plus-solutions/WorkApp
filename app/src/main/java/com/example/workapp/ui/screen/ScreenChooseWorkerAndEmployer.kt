@@ -30,7 +30,7 @@ import com.example.workapp.ui.component.Button
 import com.example.workapp.ui.theme.blue500
 
 @Composable
-fun ChooseWorkerAndEmployer(
+fun ScreenChooseWorkerAndEmployer(
     modifier: Modifier = Modifier
 ) {
     Box(
@@ -110,5 +110,5 @@ fun ChooseWorkerAndEmployer(
 @Preview(name = "ChooseWorkerAndEmployer", showBackground = true)
 @Composable
 private fun PreviewChooseWorkerAndEmployer() {
-    ChooseWorkerAndEmployer()
+    ScreenChooseWorkerAndEmployer()
 }

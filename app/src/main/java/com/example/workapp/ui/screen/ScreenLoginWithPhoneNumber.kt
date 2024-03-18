@@ -1,7 +1,6 @@
 package com.example.workapp.ui.screen
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.interaction.FocusInteraction
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -11,8 +10,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.ArrowForward
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -36,7 +33,7 @@ import com.example.workapp.ui.component.EditText
 import com.example.workapp.ui.theme.blue50
 
 @Composable
-fun LoginWithPhoneNumber(
+fun ScreenLoginWithPhoneNumber(
     modifier: Modifier = Modifier
 ) {
     Box(modifier.fillMaxSize().background(blue50)) {
@@ -92,5 +89,5 @@ fun LoginWithPhoneNumber(
 @Preview(name = "LoginWithPhoneNumber", showBackground = true)
 @Composable
 private fun PreviewLoginWithPhoneNumber() {
-    LoginWithPhoneNumber()
+    ScreenLoginWithPhoneNumber()
 }
