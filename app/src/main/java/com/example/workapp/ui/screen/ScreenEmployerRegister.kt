@@ -1,9 +1,7 @@
 package com.example.workapp.ui.screen
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -25,7 +23,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -43,7 +40,7 @@ import com.example.workapp.ui.theme.darkGray
 import com.example.workapp.ui.theme.liteGray
 
 @Composable
-fun EmployerRegister(
+fun ScreenEmployerRegister(
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -103,7 +100,7 @@ fun EmployerRegister(
                 phone = it
             }
 
-            //Todo: Add adress
+            //Todo:Add adress
 
             Spacer(modifier = Modifier.size(36.dp))
             var man by remember { mutableStateOf(true) }
@@ -155,8 +152,8 @@ fun EmployerRegister(
     }
 }
 
-@Preview(name = "EmployerRegister",)
+@Preview(name = "EmployerRegister")
 @Composable
 private fun PreviewEmployerRegister() {
-    EmployerRegister()
+    ScreenEmployerRegister()
 }

@@ -38,6 +38,9 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
+import com.example.workapp.navigation.AppNavHost
 import com.example.workapp.ui.component.EditText
 import com.example.workapp.ui.component.OtpInputField
 import com.example.workapp.ui.theme.BorderDark
@@ -51,42 +54,25 @@ class MainActivity : ComponentActivity() {
         setContent {
             WorkAppTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    var text by remember {
-                        mutableStateOf("")
-                    }
-                    Column {
-                        OtpInputField(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(16.dp),
-                            otpText = text,
-                            onOtpModified = { it, b ->
-                                text = it
-                            }
-                        )
-                    }
-                }
+                AppNavHost(navController = rememberNavController())
             }
         }
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    WorkAppTheme {
-        Greeting("Android")
+    @Composable
+    fun Greeting(name: String, modifier: Modifier = Modifier) {
+        Text(
+            text = "Hello $name!",
+            modifier = modifier
+        )
     }
+
+    @Preview(showBackground = true)
+    @Composable
+    fun GreetingPreview() {
+        WorkAppTheme {
+            Greeting("Android")
+        }
+    }
+
 }
