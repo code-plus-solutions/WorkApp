@@ -1,9 +1,9 @@
-package com.example.network.model.worker.register
+package com.example.network.model.employer.register
 
 
 import com.google.gson.annotations.SerializedName
 
-data class WorkerRegisterData(
+data class BodyEmployerRegister(
     @SerializedName("address")
     var address: String?,
     @SerializedName("city")
