@@ -27,6 +27,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.workapp.R
 import com.example.workapp.ui.component.Button
 import com.example.workapp.ui.component.EditText
@@ -34,12 +35,16 @@ import com.example.workapp.ui.theme.blue50
 
 @Composable
 fun ScreenLoginWithPhoneNumber(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
-    Box(modifier.fillMaxSize().background(blue50)) {
+    Box(
+        modifier
+            .fillMaxSize()
+            .background(blue50)
+    ) {
         IconButton(
             modifier = modifier.padding(top = 14.dp, start = 14.dp),
-            onClick = { /*TODO*/ }) {
+            onClick = { }) {
             Icon(painter = painterResource(id = R.drawable.back), contentDescription = "back")
         }
         Column(
@@ -64,7 +69,9 @@ fun ScreenLoginWithPhoneNumber(
                 mutableStateOf("")
             }
             EditText(
-                modifier = Modifier.fillMaxWidth().padding(16.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
                 value = phone,
                 hint = "",
                 label = "شماره تماس",
@@ -79,7 +86,7 @@ fun ScreenLoginWithPhoneNumber(
                     .fillMaxWidth()
                     .padding(16.dp),
                 text = "ورود/ثبت نام",
-            ){
+            ) {
 
             }
         }

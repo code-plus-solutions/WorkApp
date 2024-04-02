@@ -21,4 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "WorkApp"
 include(":app")
- 
+include(":data:model")
+include(":data:network")
+include(":data:storage")
+include(":data:repository")

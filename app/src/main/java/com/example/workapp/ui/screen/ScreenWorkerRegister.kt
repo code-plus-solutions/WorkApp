@@ -31,6 +31,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.workapp.R
+import com.example.workapp.navigation.NavActions
 import com.example.workapp.ui.component.Button
 import com.example.workapp.ui.component.EditText
 import com.example.workapp.ui.component.ImageUploader
@@ -40,8 +41,9 @@ import com.example.workapp.ui.theme.darkGray
 import com.example.workapp.ui.theme.liteGray
 
 @Composable
-fun ScreenWorkerRegister(
-    modifier: Modifier = Modifier
+fun ScreenWorkerRegister (
+    modifier: Modifier = Modifier,
+    navController: NavActions? = null,
 ) {
     Column(
         modifier

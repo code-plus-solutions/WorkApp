@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -59,8 +61,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
+    implementation(project(":data:storage"))
+    implementation(project(":data:model"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -69,6 +71,35 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    implementation(libs.hilt.android.v244)
+    kapt(libs.hilt.android.compiler)
+    // Add Dagger and Hilt dependencies
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.hilt.android.v251)
+    kapt(libs.hilt.compiler)
+    implementation(libs.hilt.android.gradle.plugin)
+
+    implementation(libs.androidx.hilt.navigation.fragment)
+
+    kapt(libs.androidx.hilt.compiler)
+    // When using Java.
+    annotationProcessor(libs.androidx.hilt.compiler)
+
+    implementation(libs.androidx.hilt.navigation.compose)
+
+
+    // For instrumentation tests
+    androidTestImplementation(libs.hilt.android.testing)
+    kaptAndroidTest(libs.hilt.compiler)
+
+    // For local unit tests
+    testImplementation(libs.hilt.android.testing)
+    kaptTest(libs.hilt.compiler)
+
+    // Java language implementation
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
+
     // Kotlin
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
@@ -76,6 +107,15 @@ dependencies {
     // Feature module Support
     implementation(libs.androidx.navigation.dynamic.features.fragment)
 
+    // Testing Navigation
+    androidTestImplementation(libs.androidx.navigation.testing)
+
     // Jetpack Compose Integration
     implementation(libs.androidx.navigation.compose)
+
+    implementation(libs.kotlinx.coroutines.android)
+
+}
+kapt {
+    correctErrorTypes = true
 }

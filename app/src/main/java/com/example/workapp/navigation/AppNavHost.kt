@@ -5,7 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.workapp.ui.screen.ScreenChooseWorkerAndEmployer
+import com.example.workapp.ui.screen.chooseworkerandemployer.ScreenChooseWorkerAndEmployer
 import com.example.workapp.ui.screen.ScreenEmployerRegister
 import com.example.workapp.ui.screen.ScreenLoginWithPhoneNumber
 import com.example.workapp.ui.screen.ScreenOtp
