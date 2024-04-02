@@ -12,7 +12,13 @@ import com.example.network.model.worker.login.BodyWorkerLogin
 import com.example.network.model.worker.login.WorkerLoginResponse
 import com.example.network.model.worker.register.BodyWorkerRegister
 import com.example.network.model.worker.register.WorkerRegisterResponse
+import com.example.network.util.Content
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.MainScope
 import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.POST
 
 interface IClient {
