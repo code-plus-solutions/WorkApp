@@ -63,6 +63,9 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(project(":data:storage"))
     implementation(project(":data:model"))
+    implementation(project(":data:repository"))
+    implementation(project(":data:datasource"))
+    implementation(project(":data:network"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -70,6 +73,10 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.gson)
 
     implementation(libs.hilt.android.v244)
     kapt(libs.hilt.android.compiler)

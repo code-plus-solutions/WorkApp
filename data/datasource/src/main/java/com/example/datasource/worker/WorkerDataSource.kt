@@ -1,5 +1,6 @@
 package com.example.datasource.worker
 
+import android.util.Log
 import com.example.network.api.IClient
 import com.example.network.model.employer.login.BodyEmployerLogin
 import com.example.network.model.employer.login.EmployerLoginResponse
@@ -18,7 +19,11 @@ class WorkerDataSource @Inject constructor(val iClient: IClient) {
         return if (response.isSuccessful) {
             Result.success(response.body()!!)
         } else {
-            Result.failure(Exception(response.message()))
+            return if (response.code() == 404) {
+                Result.failure(Exception("404"))
+            } else {
+                Result.failure(Exception(response.message()))
+            }
         }
     }
 

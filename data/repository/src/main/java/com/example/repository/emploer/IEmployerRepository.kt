@@ -8,9 +8,9 @@ import kotlinx.coroutines.flow.Flow
 
 interface IEmployerRepository {
 
-    suspend fun loginWork(photo: String): Flow<Result<EmployerLoginResponse>>
+    suspend fun loginEmployer(photo: String): Flow<Result<EmployerLoginResponse>>
 
-    suspend fun registerWorker(
+    suspend fun registerEmployer(
         name: String,
         phone: String,
         man: Boolean,

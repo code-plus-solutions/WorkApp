@@ -20,7 +20,7 @@ class SmsDataSource @Inject constructor(val iClient: IClient) {
     }
 
     suspend fun checkSms(phone: String,code:String):Result<CheckSmsResponse> {
-        val response = iClient.checkSms(BodyCheckSms(phone,code))
+        val response = iClient.checkSms(BodyCheckSms(code = code,phone = phone))
 
         return if (response.isSuccessful){
             Result.success(response.body()!!)

@@ -19,25 +19,26 @@ import kotlinx.coroutines.MainScope
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface IClient {
     @POST("worker/api/login")
-    suspend fun workerLogin(bodyWorkerLogin: BodyWorkerLogin): Response<WorkerLoginResponse>
+    suspend fun workerLogin(@Body bodyWorkerLogin: BodyWorkerLogin): Response<WorkerLoginResponse>
 
     @POST("worker/api/register")
-    suspend fun workerRegister(bodyWorkerRegister: BodyWorkerRegister): Response<WorkerRegisterResponse>
+    suspend fun workerRegister(@Body bodyWorkerRegister: BodyWorkerRegister): Response<WorkerRegisterResponse>
 
     @POST("employe/api/login")
-    suspend fun employerLogin(bodyEmployerLogin: BodyEmployerLogin): Response<EmployerLoginResponse>
+    suspend fun employerLogin(@Body bodyEmployerLogin: BodyEmployerLogin): Response<EmployerLoginResponse>
 
     @POST("employe/api/register")
-    suspend fun employerRegister(bodyEmployerRegister:BodyEmployerRegister): Response<EmployerRegisterResponse>
+    suspend fun employerRegister(@Body bodyEmployerRegister:BodyEmployerRegister): Response<EmployerRegisterResponse>
 
     @POST("sms/api/checkSms")
-    suspend fun checkSms(bodyCheckSms: BodyCheckSms): Response<CheckSmsResponse>
+    suspend fun checkSms(@Body bodyCheckSms: BodyCheckSms): Response<CheckSmsResponse>
 
     @POST("sms/api/getSms")
-    suspend fun getSms(bodyGetSms: BodyGetSms): Response<GetSmsResponse>
+    suspend fun getSms(@Body bodyGetSms: BodyGetSms): Response<GetSmsResponse>
 
 }

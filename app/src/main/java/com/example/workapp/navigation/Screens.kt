@@ -6,4 +6,5 @@ sealed class Screens (val route:String){
     data object ScreenOtp : Screens("ScreensOtp")
     data object ScreenEmployerRegister : Screens("EmployerRegister")
     data object ScreenWorkerRegister : Screens("WorkerRegister")
+    data object ScreenHome : Screens("Home")
 }

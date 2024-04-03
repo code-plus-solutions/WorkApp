@@ -15,7 +15,7 @@ import javax.inject.Inject
 class IEmployerRepositoryImpl @Inject constructor(val employerDataSource: EmployerDataSource) :
     IEmployerRepository {
 
-    override suspend fun loginWork(photo: String): Flow<Result<EmployerLoginResponse>> =
+    override suspend fun loginEmployer(photo: String): Flow<Result<EmployerLoginResponse>> =
         flow<Result<EmployerLoginResponse>> {
             val response = employerDataSource.login(photo)
 
@@ -29,7 +29,7 @@ class IEmployerRepositoryImpl @Inject constructor(val employerDataSource: Employ
 
         }.flowOn(Dispatchers.IO)
 
-    override suspend fun registerWorker(
+    override suspend fun registerEmployer(
         name: String,
         phone: String,
         man: Boolean,

@@ -24,4 +24,12 @@ class NavActions() {
     fun navTo(route:String){
         navController?.navigate(route)
     }
+
+    fun navToHome(){
+        navController?.navigate(Screens.ScreenHome.route)
+    }
+
+    fun navToBack(){
+        navController?.popBackStack()
+    }
 }

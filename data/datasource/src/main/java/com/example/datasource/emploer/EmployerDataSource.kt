@@ -14,7 +14,12 @@ class EmployerDataSource @Inject constructor(val iClient: IClient) {
         if (response.isSuccessful) {
             return Result.success(response.body()!!)
         } else {
-            return Result.failure(Exception(response.message()))
+            return if (response.code() == 404) {
+                Result.failure(Exception("404"))
+            } else {
+                Result.failure(Exception(response.message()))
+            }
+
         }
     }
 

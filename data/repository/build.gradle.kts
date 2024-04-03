@@ -46,6 +46,11 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.gson)
+
     implementation(libs.hilt.android.v244)
     kapt(libs.hilt.android.compiler)
     // Add Dagger and Hilt dependencies

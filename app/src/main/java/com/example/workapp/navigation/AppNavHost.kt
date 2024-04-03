@@ -7,8 +7,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.workapp.ui.screen.chooseworkerandemployer.ScreenChooseWorkerAndEmployer
 import com.example.workapp.ui.screen.ScreenEmployerRegister
-import com.example.workapp.ui.screen.ScreenLoginWithPhoneNumber
-import com.example.workapp.ui.screen.ScreenOtp
+import com.example.workapp.ui.screen.ScreenHome
+import com.example.workapp.ui.screen.loginwithphonenumber.ScreenLoginWithPhoneNumber
+import com.example.workapp.ui.screen.otp.ScreenOtp
 import com.example.workapp.ui.screen.ScreenWorkerRegister
 
 
@@ -38,5 +39,9 @@ fun AppNavHost(
         composable(Screens.ScreenEmployerRegister.route){
             ScreenEmployerRegister()
         }
+        composable(Screens.ScreenHome.route){
+            ScreenHome()
+        }
+
     }
 }

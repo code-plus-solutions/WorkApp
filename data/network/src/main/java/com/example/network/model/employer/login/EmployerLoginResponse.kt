@@ -7,7 +7,7 @@ data class EmployerLoginResponse(
     @SerializedName("data")
     var data: Data?,
     @SerializedName("error")
-    var error: Any?,
+    var error: String?,
     @SerializedName("status")
     var status: Boolean?
 )

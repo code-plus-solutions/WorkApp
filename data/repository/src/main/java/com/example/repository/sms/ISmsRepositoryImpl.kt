@@ -25,7 +25,7 @@ class ISmsRepositoryImpl @Inject constructor(val dataSource: SmsDataSource) : IS
 
     override suspend fun checkSms(phone: String, code: String): Flow<Result<CheckSmsResponse>> =
         flow<Result<CheckSmsResponse>> {
-            val response = dataSource.checkSms(phone, code)
+            val response = dataSource.checkSms(phone =phone,code = code)
 
             response.onFailure {
                 emit(Result.failure(it))

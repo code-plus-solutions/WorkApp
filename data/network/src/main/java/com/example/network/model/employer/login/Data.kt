@@ -7,7 +7,7 @@ data class Data(
     @SerializedName("address")
     var address: String?,
     @SerializedName("avatar")
-    var avatar: Any?,
+    var avatar: String?,
     @SerializedName("city")
     var city: String?,
     @SerializedName("id")
